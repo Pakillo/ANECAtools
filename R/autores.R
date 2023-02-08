@@ -1,22 +1,18 @@
 
-#' Añadir autores de publicaciones
+#' Extraer autores
 #'
 #' @param aut.text Cadena de texto conteniendo el nombre de uno o varios autores
-#' @param aut.bib Referencia en formato BibTeX (aún no implementado)
 #' @param aut.sep Caracter(es) que separa cada autor en `aut_text`
-#' @param mayus ¿Poner todos los caracteres en mayúsculas (TRUE) o dejarlos tal cual (FALSE)?
-#' @param pause Tiempo (en segundos) que dura el nombre de cada autor en el portapapeles
-#' (para que dé tiempo a pegar cada uno en la aplicación de la ANECA)
+#' @param mayus Poner todos los caracteres en mayusculas (TRUE) o dejarlos tal cual (FALSE)?
 #'
-#' @return Los autores son pegados al portapapeles
+#' @return Vector con los nombres de los autores
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' add_authors("Quintero, Elena; Rodriguez-Sanchez, Francisco; Jordano, Pedro")
+#' extraer_autores("Quintero, Elena; Rodriguez-Sanchez, Francisco; Jordano, Pedro")
 #' }
-add_authors <- function(aut.text = NULL, aut.bib = NULL, aut.sep = "; ",
-                        mayus = TRUE, pause = 3) {
+extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 
   if (!is.null(aut.text)) {
     if (isTRUE(mayus)) {
@@ -24,37 +20,50 @@ add_authors <- function(aut.text = NULL, aut.bib = NULL, aut.sep = "; ",
     }
     auts <- stringr::str_split_1(aut.text, pattern = aut.sep)
 
-    message("Se han identificado los siguientes autores:\n\n", paste(auts, collapse = "\n"))
+    message("Se han identificado ", length(auts), " autores:\n\n", paste(auts, collapse = "\n"))
   }
-
-
-  if (!is.null(aut.bib)) {
-    message("Extracción de autores a partir de BibTeX aún no implementado")
-  }
-
-  pegar <- utils::askYesNo("¿Quieres ir pegando los autores al portapapeles?")
-  if (!isTRUE(pegar)) message("OK")
-  if (isTRUE(pegar)) {
-
-    message("\nPegando cada autor al portapapeles cada ", pause, " segundos.\n")
-    listo <- utils::askYesNo("¿Listo para comenzar a pegar autores en la aplicación de la ANECA?")
-
-    if (isTRUE(listo)) {
-
-      clipr::clear_clip()
-      Sys.sleep(pause)
-
-      for (i in auts) {
-        clipr::write_clip(i, object_type = "character")
-        Sys.sleep(pause)
-      }
-
-      clipr::clear_clip()
-      message("¡Listo! Espero que te haya dado tiempo :)")
-
-    }
-
-  }
-
 
 }
+
+
+#' Pegar autores
+#'
+#' @param autores Vector con los nombres de los autores
+#' @param pausa Tiempo (en segundos) que dura el nombre de cada autor en el portapapeles
+#' (para que de tiempo a pegar cada uno en la aplicacion de la ANECA)
+#'
+#' @return Los autores son copiados al portapapeles secuencialmente
+#'
+#' @keywords internal
+#' @noRd
+#'
+pegar_autores <- function(autores = NULL, pausa = 3) {
+
+  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos.\n")
+  listo <- utils::askYesNo("Listo para comenzar a pegar autores en la aplicacion de la ANECA?")
+
+  if (isTRUE(listo)) {
+
+    clipr::clear_clip()
+    Sys.sleep(pausa)
+
+    for (i in autores) {
+      clipr::write_clip(i, object_type = "character")
+      Sys.sleep(pausa)
+    }
+
+    clipr::clear_clip()
+    message("Listo! Espero que te haya dado tiempo :)")
+
+  }
+
+}
+
+
+pegar_texto <- function(texto = NULL, mayus = TRUE) {
+
+  if (isTRUE(mayus)) texto <- toupper(texto)
+  clipr::write_clip(texto, object_type = "character")
+
+}
+
