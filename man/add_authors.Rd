@@ -4,7 +4,13 @@
 \alias{add_authors}
 \title{Añadir autores de publicaciones}
 \usage{
-add_authors(aut.text = NULL, aut.bib = NULL, aut.sep = "; ", pause = 3)
+add_authors(
+  aut.text = NULL,
+  aut.bib = NULL,
+  aut.sep = "; ",
+  mayus = TRUE,
+  pause = 3
+)
 }
 \arguments{
 \item{aut.text}{Cadena de texto conteniendo el nombre de uno o varios autores}
@@ -12,6 +18,8 @@ add_authors(aut.text = NULL, aut.bib = NULL, aut.sep = "; ", pause = 3)
 \item{aut.bib}{Referencia en formato BibTeX (aún no implementado)}
 
 \item{aut.sep}{Caracter(es) que separa cada autor en \code{aut_text}}
+
+\item{mayus}{¿Poner todos los caracteres en mayúsculas (TRUE) o dejarlos tal cual (FALSE)?}
 
 \item{pause}{Tiempo (en segundos) que dura el nombre de cada autor en el portapapeles
 (para que dé tiempo a pegar cada uno en la aplicación de la ANECA)}
