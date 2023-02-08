@@ -18,14 +18,14 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ANECAtools is to ...
+ANECAtools es un paquete de R con herramientas para facilitar el proceso de solicitud de acreditación del profesorado ante la ANECA, automatizando tareas en lo posible. 
 
 ## Installation
 
 You can install the development version of ANECAtools like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+remotes::install_github("Pakillo/ANECAtools")
 ```
 
 ## Example
