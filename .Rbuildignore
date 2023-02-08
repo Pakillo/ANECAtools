@@ -5,3 +5,4 @@
 ^analyses$
 ^manuscript$
 ^makefile\.R$
+^LICENSE\.md$
