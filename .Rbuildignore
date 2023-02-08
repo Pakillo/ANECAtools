@@ -1,0 +1,7 @@
+^ANECAtools\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^data-raw$
+^analyses$
+^manuscript$
+^makefile\.R$
