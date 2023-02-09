@@ -2,3 +2,5 @@
 
 export(extraer_autores)
 export(introducir_publicaciones)
+export(pdf_combinar)
+export(pdf_extraer_pags)
