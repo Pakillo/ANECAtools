@@ -12,6 +12,7 @@ Herramientas para facilitar el proceso de solicitud de acreditación de profesor
 Useful links:
 \itemize{
   \item \url{https://github.com/Pakillo/ANECAtools}
+  \item \url{https://pakillo.github.io/ANECAtools/}
   \item Report bugs at \url{https://github.com/Pakillo/ANECAtools/issues}
 }
 
