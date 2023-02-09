@@ -11,10 +11,11 @@
 #' @export
 #'
 #' @examples
-introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 3) {
+#' bibtex <- "Quintero.bib"
+introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 2) {
 
   stopifnot(is.character(bibfile))
-  bib <- bib2df::bib2df(bibfile)
+  bib <- suppressWarnings(bib2df::bib2df(bibfile))
   if (!is.data.frame(bib)) stop("La importacion del BibTeX ha fallado.")
 
   pubs <- split(bib, 1:nrow(bib))
@@ -26,7 +27,7 @@ introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 3) {
 
 procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 3) {
 
-  message("Procesando '", bib$TITLE, "'...")
+  message("Procesando '", bib$TITLE, "'...\n")
 
   ## Autores
   auts <- unlist(bib$AUTHOR)
@@ -43,9 +44,15 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 3) {
   pegar_texto(bib$TITLE, mayus = mayus)
 
 
-  ## Revista
-  utils::askYesNo("Copiando Revista al portapapeles")
-  pegar_texto(bib$JOURNAL, mayus = mayus)
+  ## Revista/Libro
+  if (bib$CATEGORY == "INCOLLECTION") {
+    utils::askYesNo("Copiando Titulo del Libro al portapapeles")
+    pegar_texto(bib$BOOKTITLE, mayus = mayus)
+  } else {
+    utils::askYesNo("Copiando Revista al portapapeles")
+    pegar_texto(bib$JOURNAL, mayus = mayus)
+  }
+
 
 
   ## Volumen
@@ -77,9 +84,15 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 3) {
   utils::askYesNo("Copiando Anyo al portapapeles")
   pegar_texto(bib$YEAR)
 
-  ## ISSN
-  utils::askYesNo("Copiando ISSN al portapapeles")
-  pegar_texto(bib$ISSN)
+  ## ISSN/ISBN
+  if (bib$CATEGORY == "INCOLLECTION" | bib$CATEGORY == "BOOK" ) {
+    utils::askYesNo("Copiando ISBN al portapapeles")
+    pegar_texto(bib$ISBN)
+  } else {
+    utils::askYesNo("Copiando ISSN al portapapeles")
+    pegar_texto(bib$ISSN)
+  }
+
 
   message("Listo! ----------------------------------------------------")
 

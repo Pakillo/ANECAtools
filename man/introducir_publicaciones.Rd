@@ -4,7 +4,7 @@
 \alias{introducir_publicaciones}
 \title{Introducir publicaciones}
 \usage{
-introducir_publicaciones(bibfile = NULL, mayus = TRUE, pausa = 3)
+introducir_publicaciones(bibfile = NULL, mayus = TRUE, pausa = 2)
 }
 \arguments{
 \item{bibfile}{Ruta al archivo BibTeX (caracter)}
@@ -15,9 +15,12 @@ introducir_publicaciones(bibfile = NULL, mayus = TRUE, pausa = 3)
 (para que de tiempo a pegar cada uno en la aplicacion de la ANECA)}
 }
 \value{
-Esta funcion va copiando los distintos campos al portapapeles para
-poder pegarlos en la aplicacion de la ANECA.
+Esta funcion va copiando los distintos campos (autores, titulo, revista, etc)
+al portapapeles para poder pegarlos en la aplicacion de la ANECA.
 }
 \description{
 Introducir publicaciones
+}
+\examples{
+bibtex <- "Quintero.bib"
 }
