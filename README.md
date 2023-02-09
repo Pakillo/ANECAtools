@@ -34,7 +34,7 @@ remotes::install_github("Pakillo/ANECAtools")
 
 `introducir_publicaciones("mis_papers.bib")`
 
-![](man/figures/ANECAtools.mp4)
+![](man/figures/ANECAtools.gif)
 
 ### Extraer páginas de archivos pdf
 
