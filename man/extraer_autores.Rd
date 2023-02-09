@@ -11,7 +11,7 @@ extraer_autores(aut.text = NULL, aut.sep = "; ", mayus = TRUE)
 
 \item{aut.sep}{Caracter(es) que separa cada autor en \code{aut_text}}
 
-\item{mayus}{Poner todos los caracteres en mayusculas (TRUE) o dejarlos tal cual (FALSE)?}
+\item{mayus}{¿Poner todos los caracteres en mayúsculas (TRUE) o dejarlos tal cual (FALSE)?}
 }
 \value{
 Vector con los nombres de los autores

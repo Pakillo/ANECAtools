@@ -2,16 +2,19 @@
 #' Introducir publicaciones
 #'
 #' @param bibfile Ruta al archivo BibTeX (caracter)
-#' @param mayus Poner todos los caracteres en mayusculas (TRUE) o dejarlos tal cual (FALSE)?
+#' @param mayus ¿Poner todos los caracteres en mayúsculas (TRUE) o dejarlos tal cual (FALSE)?
 #' @param pausa Tiempo (en segundos) que dura el nombre de cada autor en el portapapeles
-#' (para que de tiempo a pegar cada uno en la aplicacion de la ANECA)
+#' (para que dé tiempo a pegar cada uno en la aplicación de la ANECA)
 #'
-#' @return Esta funcion va copiando los distintos campos (autores, titulo, revista, etc)
-#' al portapapeles para poder pegarlos en la aplicacion de la ANECA.
+#' @return Esta función va copiando los distintos campos (autores, título, revista, etc)
+#' al portapapeles para poder pegarlos en la aplicación de la ANECA.
 #' @export
 #'
 #' @examples
-#' bibtex <- "Quintero.bib"
+#' \dontrun{
+#' bibfile <- system.file("articulo.bib", package = "ANECAtools")
+#' introducir_publicaciones(bibfile)
+#' }
 introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 2) {
 
   stopifnot(is.character(bibfile))
@@ -25,7 +28,7 @@ introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 2) {
 
 
 
-procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 3) {
+procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 2) {
 
   message("Procesando '", bib$TITLE, "'...\n")
 

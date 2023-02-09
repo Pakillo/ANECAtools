@@ -3,7 +3,7 @@
 #'
 #' @param aut.text Cadena de texto conteniendo el nombre de uno o varios autores
 #' @param aut.sep Caracter(es) que separa cada autor en `aut_text`
-#' @param mayus Poner todos los caracteres en mayusculas (TRUE) o dejarlos tal cual (FALSE)?
+#' @param mayus ¿Poner todos los caracteres en mayúsculas (TRUE) o dejarlos tal cual (FALSE)?
 #'
 #' @return Vector con los nombres de los autores
 #' @export
@@ -30,16 +30,16 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 #'
 #' @param autores Vector con los nombres de los autores
 #' @param pausa Tiempo (en segundos) que dura el nombre de cada autor en el portapapeles
-#' (para que de tiempo a pegar cada uno en la aplicacion de la ANECA)
+#' (para que dé tiempo a pegar cada uno en la aplicación de la ANECA)
 #'
 #' @return Los autores son copiados al portapapeles secuencialmente
 #'
 #' @keywords internal
 #' @noRd
 #'
-pegar_autores <- function(autores = NULL, pausa = 3) {
+pegar_autores <- function(autores = NULL, pausa = 2) {
 
-  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos. Sonará un beep cuando esté listo para pegar cada autor, y un sonido especial cuando haya terminado\n")
+  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos. Sonara un beep cuando este listo para pegar cada autor, y un sonido especial cuando haya terminado\n")
   listo <- utils::askYesNo("Listo para comenzar a pegar autores en la aplicacion de la ANECA?")
 
   if (isTRUE(listo)) {
