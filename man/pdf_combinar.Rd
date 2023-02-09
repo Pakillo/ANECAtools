@@ -17,3 +17,9 @@ Archivo PDF en disco
 \description{
 Combinar varios archivos en un único archivo PDF
 }
+\examples{
+\dontrun{
+pdfs <- list.files("PDF_SUBSET", full.names = TRUE)
+pdf_combinar(pdfs)
+}
+}

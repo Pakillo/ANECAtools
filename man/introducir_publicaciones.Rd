@@ -23,7 +23,7 @@ Introducir publicaciones
 }
 \examples{
 \dontrun{
-bibfile <- system.file("articulo.bib", package = "ANECAtools")
+bibfile <- system.file("extdata", "articulo.bib", package = "ANECAtools")
 introducir_publicaciones(bibfile)
 }
 }

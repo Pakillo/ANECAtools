@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' bibfile <- system.file("articulo.bib", package = "ANECAtools")
+#' bibfile <- system.file("extdata", "articulo.bib", package = "ANECAtools")
 #' introducir_publicaciones(bibfile)
 #' }
 introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 2) {

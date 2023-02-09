@@ -31,10 +31,10 @@ pdf_extraer_pags <- function(pdf.in = NULL,
 
   pags[pags == "ini"] <- 1
   pags[pags == "fin"] <- pdftools::pdf_length(pdf.in)
-  pags <- as.numeric(pags)
+  pags <- unique(as.numeric(pags))
 
   if (!is.null(out.dir)) {
-    dir.create(out.dir)
+    if (!dir.exists(out.dir)) dir.create(out.dir)
     out.dir <- paste0(out.dir, "/")
   }
 
@@ -62,6 +62,11 @@ pdf_extraer_pags <- function(pdf.in = NULL,
 #' @return Archivo PDF en disco
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' pdfs <- list.files("PDF_SUBSET", full.names = TRUE)
+#' pdf_combinar(pdfs)
+#' }
 pdf_combinar <- function(archivos = NULL, pdf.out = "pdfs_agrupados.pdf") {
 
   pdftools::pdf_combine(input = archivos, output = pdf.out)
