@@ -6,8 +6,8 @@
 #' @param pausa Tiempo (en segundos) que dura el nombre de cada autor en el portapapeles
 #' (para que de tiempo a pegar cada uno en la aplicacion de la ANECA)
 #'
-#' @return Esta funcion va copiando los distintos campos al portapapeles para
-#' poder pegarlos en la aplicacion de la ANECA.
+#' @return Esta funcion va copiando los distintos campos (autores, titulo, revista, etc)
+#' al portapapeles para poder pegarlos en la aplicacion de la ANECA.
 #' @export
 #'
 #' @examples

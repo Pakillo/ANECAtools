@@ -39,7 +39,7 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 #'
 pegar_autores <- function(autores = NULL, pausa = 3) {
 
-  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos.\n")
+  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos. Sonará un beep cuando esté listo para pegar\n")
   listo <- utils::askYesNo("Listo para comenzar a pegar autores en la aplicacion de la ANECA?")
 
   if (isTRUE(listo)) {
@@ -49,6 +49,7 @@ pegar_autores <- function(autores = NULL, pausa = 3) {
 
     for (i in autores) {
       clipr::write_clip(i, object_type = "character")
+      beepr::beep()
       Sys.sleep(pausa)
     }
 
