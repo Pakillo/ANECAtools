@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>/authors.html</loc>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ANECAtools-package.html</loc>
+  </url>
+  <url>
+    <loc>/reference/extraer_autores.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/introducir_publicaciones.html</loc>
+  </url>
+  <url>
+    <loc>/reference/pdf_combinar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/pdf_extraer_pags.html</loc>
+  </url>
+</urlset>
