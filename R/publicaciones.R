@@ -15,7 +15,7 @@
 #' bibfile <- system.file("extdata", "articulo.bib", package = "ANECAtools")
 #' introducir_publicaciones(bibfile)
 #' }
-introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 2) {
+introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 3) {
 
   stopifnot(is.character(bibfile))
   bib <- suppressWarnings(bib2df::bib2df(bibfile))
@@ -28,7 +28,7 @@ introducir_publicaciones <- function(bibfile = NULL, mayus = TRUE, pausa = 2) {
 
 
 
-procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 2) {
+procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 3) {
 
   message("Procesando '", bib$TITLE, "'...\n")
 

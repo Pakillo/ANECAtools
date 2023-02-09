@@ -18,7 +18,7 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
     if (isTRUE(mayus)) {
       aut.text <- toupper(aut.text)
     }
-    auts <- stringr::str_split_1(aut.text, pattern = aut.sep)
+    auts <- unlist(strsplit(aut.text, split = aut.sep))
 
     message("Se han identificado ", length(auts), " autores:\n\n", paste(auts, collapse = "\n"))
   }
@@ -37,9 +37,9 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 #' @keywords internal
 #' @noRd
 #'
-pegar_autores <- function(autores = NULL, pausa = 2) {
+pegar_autores <- function(autores = NULL, pausa = 3) {
 
-  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos. Sonara un beep cuando este listo para pegar cada autor, y un sonido especial cuando haya terminado\n")
+  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos.\nSonara un beep cuando este listo para pegar cada autor\ny un sonido especial cuando haya terminado\n")
   listo <- utils::askYesNo("Listo para comenzar a pegar autores en la aplicacion de la ANECA?")
 
   if (isTRUE(listo)) {
