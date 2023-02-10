@@ -4,7 +4,7 @@
 \alias{introducir_publicaciones}
 \title{Introducir publicaciones}
 \usage{
-introducir_publicaciones(bibfile = NULL, mayus = TRUE, pausa = 3)
+introducir_publicaciones(bibfile = NULL, mayus = TRUE, pausa = 4)
 }
 \arguments{
 \item{bibfile}{Ruta al archivo BibTeX (caracter)}
