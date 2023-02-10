@@ -72,3 +72,29 @@ pdf_combinar <- function(archivos = NULL, pdf.out = "pdfs_agrupados.pdf") {
   pdftools::pdf_combine(input = archivos, output = pdf.out)
 
 }
+
+
+#' Comprimir archivo PDF
+#'
+#' @param archivo Ruta de archivo PDF en disco
+#' @param calidad "baja", "media" o "alta" según el grado de compresión deseado
+#' @param ... (opcional) Argumentos extra para [tools::compactPDF()]
+#'
+#' @return Fichero PDF comprimido en disco
+#' @export
+#'
+pdf_comprimir <- function(archivo = NULL, calidad = "baja", ...) {
+
+  stopifnot(is.character(archivo) & length(archivo) == 1)
+  stopifnot(calidad %in% c("baja", "media", "alta"))
+
+  if (calidad == "baja") qual <- "screen"
+  if (calidad == "media") qual <- "ebook"
+  if (calidad == "alta") qual <- "printer"
+
+  archivo.comprim <- gsub(".pdf$", "_comprimido.pdf", x = archivo)
+  file.copy(from = archivo, to = archivo.comprim)
+
+  tools::compactPDF(archivo.comprim, gs_quality = qual, ...)
+
+}
