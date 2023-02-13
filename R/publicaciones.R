@@ -44,6 +44,13 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
       pegar_autores(auts, pausa = pausa)
     }
 
+    ## Dar opcion de repetir si ha habido algun fallo
+    repetir.auts <- utils::askYesNo("Necesitas repetir el copiado de autores al portapapeles?")
+    if (isTRUE(repetir.auts)) {
+      pegar_autores(auts, pausa = pausa)
+    }
+
+
     ## Titulo
     readline("Copiando TITULO al portapapeles (pulsa intro para continuar)")
     pegar_texto(bib$TITLE, mayus = mayus)
