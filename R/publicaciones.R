@@ -53,15 +53,18 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
 
     ## Titulo
     readline("Copiando TITULO al portapapeles (pulsa intro para continuar)")
+    if (isTRUE(mayus)) message(toupper(bib$TITLE)) else message(bib$TITLE)
     pegar_texto(bib$TITLE, mayus = mayus)
 
 
     ## Revista/Libro
     if (bib$CATEGORY == "INCOLLECTION") {
       readline("Copiando TITULO DEL LIBRO al portapapeles (pulsa intro para continuar)")
+      if (isTRUE(mayus)) message(toupper(bib$BOOKTITLE)) else message(bib$BOOKTITLE)
       pegar_texto(bib$BOOKTITLE, mayus = mayus)
     } else {
       readline("Copiando REVISTA al portapapeles (pulsa intro para continuar)")
+      if (isTRUE(mayus)) message(toupper(bib$JOURNAL)) else message(bib$JOURNAL)
       pegar_texto(bib$JOURNAL, mayus = mayus)
     }
 
@@ -69,6 +72,7 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
 
     ## Volumen
     readline("Copiando VOLUMEN al portapapeles (pulsa intro para continuar)")
+    message(bib$VOLUME)
     pegar_texto(bib$VOLUME)
 
 
@@ -76,10 +80,12 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
     pages <- unlist(strsplit(bib$PAGES, "--"))
 
     readline("Copiando PAGINA DE INICIO al portapapeles (pulsa intro para continuar)")
+    message(pages[1])
     pegar_texto(pages[1])
 
     if (length(pages) > 1) {
       readline("Copiando PAGINA DE FIN al portapapeles (pulsa intro para continuar)")
+      message(pages[2])
       pegar_texto(pages[2])
     }
 
@@ -88,20 +94,24 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
     ## Editorial
     if (!is.na(bib$PUBLISHER)) {
       readline("Copiando EDITORIAL al portapapeles (pulsa intro para continuar)")
+      if (isTRUE(mayus)) message(toupper(bib$PUBLISHER)) else message(bib$PUBLISHER)
       pegar_texto(bib$PUBLISHER)
     }
 
 
     ## Year
     readline("Copiando ANYO al portapapeles (pulsa intro para continuar)")
+    message(bib$YEAR)
     pegar_texto(bib$YEAR)
 
     ## ISSN/ISBN
     if (bib$CATEGORY == "INCOLLECTION" | bib$CATEGORY == "BOOK" ) {
       readline("Copiando ISBN al portapapeles (pulsa intro para continuar)")
+      message(bib$ISBN)
       pegar_texto(bib$ISBN)
     } else {
       readline("Copiando ISSN al portapapeles (pulsa intro para continuar)")
+      message(bib$ISSN)
       pegar_texto(bib$ISSN)
     }
 
