@@ -11,8 +11,7 @@ de solicitud de acreditación de profesorado ante la ANECA, automatizando
 tareas en lo posible.
 
 Entre otras funciones, ANECAtools facilita y agiliza la introducción de
-los datos de publicaciones en la plataforma de la ANECA a partir de un
-archivo BibTeX.
+los datos de publicaciones a partir de un archivo BibTeX.
 
 También incluye funciones para extraer automáticamente la página inicial
 y final de muchos archivos PDF a la vez, así como agruparlos en un único
@@ -20,9 +19,8 @@ archivo listo para subir a la plataforma.
 
 ## Instalación
 
-You can install the development version of ANECAtools like so:
-
 ``` r
+# install.packages("remotes")  # instala el paquete remotes si no lo tienes instalado
 remotes::install_github("Pakillo/ANECAtools")
 ```
 
@@ -38,8 +36,15 @@ remotes::install_github("Pakillo/ANECAtools")
 
 ### Extraer páginas de archivos pdf
 
+Extraer página inicial y final de un archivo PDF:
+
 ``` r
-## Extraer página inicial y final de muchos pdf a la vez
+pdf_extraer_pags("articulo.pdf")
+```
+
+Extraer página inicial y final de muchos PDF a la vez:
+
+``` r
 archivos <- list.files("carpeta_pdfs", full.names = TRUE)
 lapply(archivos, pdf_extraer_pags)
 ```

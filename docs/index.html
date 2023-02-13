@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ANECAtools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.4</span>
       </span>
     </div>
 
@@ -72,14 +72,14 @@
 <!-- badges: start -->
 <!-- badges: end -->
 <p>ANECAtools es un paquete de R con herramientas para facilitar el proceso de solicitud de acreditación de profesorado ante la ANECA, automatizando tareas en lo posible.</p>
-<p>Entre otras funciones, ANECAtools facilita y agiliza la introducción de los datos de publicaciones en la plataforma de la ANECA a partir de un archivo BibTeX.</p>
+<p>Entre otras funciones, ANECAtools facilita y agiliza la introducción de los datos de publicaciones a partir de un archivo BibTeX.</p>
 <p>También incluye funciones para extraer automáticamente la página inicial y final de muchos archivos PDF a la vez, así como agruparlos en un único archivo listo para subir a la plataforma.</p>
 <div class="section level2">
 <h2 id="instalación">Instalación<a class="anchor" aria-label="anchor" href="#instalaci%C3%B3n"></a>
 </h2>
-<p>You can install the development version of ANECAtools like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Pakillo/ANECAtools"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")  # instala el paquete remotes si no lo tienes instalado</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Pakillo/ANECAtools"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="ejemplos-de-uso">Ejemplos de uso<a class="anchor" aria-label="anchor" href="#ejemplos-de-uso"></a>
@@ -94,15 +94,18 @@
 <div class="section level3">
 <h3 id="extraer-páginas-de-archivos-pdf">Extraer páginas de archivos pdf<a class="anchor" aria-label="anchor" href="#extraer-p%C3%A1ginas-de-archivos-pdf"></a>
 </h3>
+<p>Extraer página inicial y final de un archivo PDF:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">## Extraer página inicial y final de muchos pdf a la vez</span></span>
-<span><span class="va">archivos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"carpeta_pdfs"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/pdf_extraer_pags.html">pdf_extraer_pags</a></span><span class="op">(</span><span class="st">"articulo.pdf"</span><span class="op">)</span></span></code></pre></div>
+<p>Extraer página inicial y final de muchos PDF a la vez:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">archivos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"carpeta_pdfs"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">archivos</span>, <span class="va">pdf_extraer_pags</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="combinar-pdfs-en-un-único-archivo">Combinar pdfs en un único archivo<a class="anchor" aria-label="anchor" href="#combinar-pdfs-en-un-%C3%BAnico-archivo"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pdfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"PDF_SUBSET"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/pdf_combinar.html">pdf_combinar</a></span><span class="op">(</span><span class="va">pdfs</span><span class="op">)</span></span></code></pre></div>
 </div>
