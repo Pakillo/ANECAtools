@@ -45,34 +45,34 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
     }
 
     ## Titulo
-    utils::askYesNo("Copiando Titulo al portapapeles")
+    readline("Copiando TITULO al portapapeles (pulsa intro para continuar)")
     pegar_texto(bib$TITLE, mayus = mayus)
 
 
     ## Revista/Libro
     if (bib$CATEGORY == "INCOLLECTION") {
-      utils::askYesNo("Copiando Titulo del Libro al portapapeles")
+      readline("Copiando TITULO DEL LIBRO al portapapeles (pulsa intro para continuar)")
       pegar_texto(bib$BOOKTITLE, mayus = mayus)
     } else {
-      utils::askYesNo("Copiando Revista al portapapeles")
+      readline("Copiando REVISTA al portapapeles (pulsa intro para continuar)")
       pegar_texto(bib$JOURNAL, mayus = mayus)
     }
 
 
 
     ## Volumen
-    utils::askYesNo("Copiando Volumen al portapapeles")
+    readline("Copiando VOLUMEN al portapapeles (pulsa intro para continuar)")
     pegar_texto(bib$VOLUME)
 
 
     ## Paginas
     pages <- unlist(strsplit(bib$PAGES, "--"))
 
-    utils::askYesNo("Copiando Pagina de inicio al portapapeles")
+    readline("Copiando PAGINA DE INICIO al portapapeles (pulsa intro para continuar)")
     pegar_texto(pages[1])
 
     if (length(pages) > 1) {
-      utils::askYesNo("Copiando Pagina de fin al portapapeles")
+      readline("Copiando PAGINA DE FIN al portapapeles (pulsa intro para continuar)")
       pegar_texto(pages[2])
     }
 
@@ -80,21 +80,21 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
 
     ## Editorial
     if (!is.na(bib$PUBLISHER)) {
-      utils::askYesNo("Copiando Editorial al portapapeles")
+      readline("Copiando EDITORIAL al portapapeles (pulsa intro para continuar)")
       pegar_texto(bib$PUBLISHER)
     }
 
 
     ## Year
-    utils::askYesNo("Copiando Anyo al portapapeles")
+    readline("Copiando ANYO al portapapeles (pulsa intro para continuar)")
     pegar_texto(bib$YEAR)
 
     ## ISSN/ISBN
     if (bib$CATEGORY == "INCOLLECTION" | bib$CATEGORY == "BOOK" ) {
-      utils::askYesNo("Copiando ISBN al portapapeles")
+      readline("Copiando ISBN al portapapeles (pulsa intro para continuar)")
       pegar_texto(bib$ISBN)
     } else {
-      utils::askYesNo("Copiando ISSN al portapapeles")
+      readline("Copiando ISSN al portapapeles (pulsa intro para continuar)")
       pegar_texto(bib$ISSN)
     }
 
