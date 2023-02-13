@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/index.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/ANECAtools-package.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/reference/ANECAtools-package.html</loc>
   </url>
   <url>
-    <loc>/reference/extraer_autores.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/reference/extraer_autores.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/introducir_publicaciones.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/reference/introducir_publicaciones.html</loc>
   </url>
   <url>
-    <loc>/reference/pdf_combinar.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/reference/pdf_combinar.html</loc>
   </url>
   <url>
-    <loc>/reference/pdf_comprimir.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/reference/pdf_comprimir.html</loc>
   </url>
   <url>
-    <loc>/reference/pdf_extraer_pags.html</loc>
+    <loc>https://pakillo.github.io/ANECAtools/reference/pdf_extraer_pags.html</loc>
   </url>
 </urlset>
