@@ -40,24 +40,26 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 pegar_autores <- function(autores = NULL, pausa = 3) {
 
   message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos.\nSonara un beep cuando este listo para pegar cada autor\ny un sonido especial cuando haya terminado\n")
-  listo <- utils::askYesNo("Listo para comenzar a pegar autores en la aplicacion de la ANECA?")
 
-  if (isTRUE(listo)) {
+  readline("Pulsa intro para comenzar a pegar autores en la aplicacion de la ANECA ")
 
-    clipr::clear_clip()
-    Sys.sleep(pausa)
+  clipr::clear_clip()
+  Sys.sleep(pausa)
 
-    for (i in autores) {
-      clipr::write_clip(i, object_type = "character")
-      beepr::beep()
+  for (i in autores) {
+    clipr::write_clip(i, object_type = "character")
+    beepr::beep()
+    if (length(autores) > 49 & i == autores[50]) {
+      readline("Llevas 50 autores. Tal vez quieras revisar la lista o darle a guardar por si acaso. Pulsa intro cuando quieras continuar")
+    } else {
       Sys.sleep(pausa)
     }
 
-    beepr::beep(5)
-    clipr::clear_clip()
-    message("Listo! Espero que te haya dado tiempo :)")
-
   }
+
+  beepr::beep(5)
+  clipr::clear_clip()
+  message("Listo! Espero que te haya dado tiempo :)")
 
 }
 
