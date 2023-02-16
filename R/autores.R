@@ -48,17 +48,15 @@ pegar_autores <- function(autores = NULL, pausa = 3) {
   for (i in autores) {
     clipr::write_clip(i, object_type = "character")
     beepr::beep()
-    if (length(autores) > 49 & i == autores[50]) {
-      readline("Llevas 50 autores. Tal vez quieras revisar la lista o darle a guardar por si acaso. Pulsa intro cuando quieras continuar")
-    } else {
-      Sys.sleep(pausa)
+    if (which(autores) %in% seq(from = 20, to = 1000, by = 20)) {
+      readline("?Necesitas una pausa? Pulsa intro cuando quieras continuar")
     }
-
+    Sys.sleep(pausa)
   }
 
   beepr::beep(5)
   clipr::clear_clip()
-  message("Listo! Espero que te haya dado tiempo :)")
+  message("Listo!")
 
 }
 
