@@ -13,9 +13,9 @@ tareas en lo posible.
 Entre otras funciones, ANECAtools facilita y agiliza la introducción de
 los datos de publicaciones a partir de un archivo BibTeX.
 
-También incluye funciones para extraer automáticamente la página inicial
-y final de muchos archivos PDF a la vez, así como agruparlos en un único
-archivo listo para subir a la plataforma.
+También permite extraer automáticamente la página inicial y final de
+muchos archivos PDF a la vez, así como agruparlos en un único archivo
+listo para subir a la plataforma.
 
 ## Instalación
 

@@ -2,7 +2,7 @@
 #' Extraer autores
 #'
 #' @param aut.text Cadena de texto conteniendo el nombre de uno o varios autores
-#' @param aut.sep Caracter(es) que separa cada autor en `aut_text`
+#' @param aut.sep Caracter(es) que separa cada autor en `aut.text`
 #' @param mayus ¿Poner todos los caracteres en mayúsculas (TRUE) o dejarlos tal cual (FALSE)?
 #'
 #' @return Vector con los nombres de los autores

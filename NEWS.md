@@ -1,6 +1,6 @@
 # ANECAtools 0.0.4
 
-* Se establece pausa voluntaria tras haber introducido 50 autores, por si se desea revisar/corregir la lista o darle a guardar por si la aplicación falla.
+* Se establece pausa voluntaria tras haber introducido 20 autores, por si se desea revisar/corregir la lista o darle a guardar por si la aplicación falla.
 
 * Se da la opción de repetir el copiado de autores por si ha habido fallos y se quiere comenzar de nuevo.
 
