@@ -14,15 +14,14 @@
 #' }
 extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 
-  if (!is.null(aut.text)) {
-    if (isTRUE(mayus)) {
-      aut.text <- toupper(aut.text)
-    }
-    auts <- unlist(strsplit(aut.text, split = aut.sep))
-
-    message("Se han identificado ", length(auts), " autores:\n\n", paste(auts, collapse = "\n"))
+  if (isTRUE(mayus)) {
+    aut.text <- toupper(aut.text)
   }
+  auts <- unlist(strsplit(aut.text, split = aut.sep))
 
+  message("Se han identificado ", length(auts), " autores:\n\n", paste(auts, collapse = "\n"))
+
+  invisible(auts)
 }
 
 
