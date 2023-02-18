@@ -48,7 +48,7 @@ pegar_autores <- function(autores = NULL, pausa = 3) {
   for (i in autores) {
     clipr::write_clip(i, object_type = "character")
     beepr::beep()
-    if (which(autores) %in% seq(from = 20, to = 1000, by = 20)) {
+    if (which(autores == i) %in% seq(from = 20, to = 1000, by = 20)) {
       readline("?Necesitas una pausa? Pulsa intro cuando quieras continuar")
     }
     Sys.sleep(pausa)
