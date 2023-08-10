@@ -45,13 +45,15 @@ install.packages("pkgbuild")
 pkgbuild::has_build_tools()
 ```
 
-Entonces ya podremos instalar ANECAtools:
+Entonces ya podremos instalar ANECAtools (este proceso solo hay que realizarlo la primera vez):
 
 ``` r
 remotes::install_github("Pakillo/ANECAtools")
 ```
 
 ## Ejemplos de uso
+
+Para usar ANECAtools, primero debemos cargar el paquete:
 
 `library(ANECAtools)`
 
