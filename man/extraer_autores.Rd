@@ -9,7 +9,7 @@ extraer_autores(aut.text = NULL, aut.sep = "; ", mayus = TRUE)
 \arguments{
 \item{aut.text}{Cadena de texto conteniendo el nombre de uno o varios autores}
 
-\item{aut.sep}{Caracter(es) que separa cada autor en \code{aut_text}}
+\item{aut.sep}{Caracter(es) que separa cada autor en \code{aut.text}}
 
 \item{mayus}{¿Poner todos los caracteres en mayúsculas (TRUE) o dejarlos tal cual (FALSE)?}
 }

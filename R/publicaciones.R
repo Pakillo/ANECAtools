@@ -37,15 +37,16 @@ procesar_publicacion <- function(bib = NULL, mayus = TRUE, pausa = 4) {
     ## Autores
     auts <- unlist(bib$AUTHOR)
     if (isTRUE(mayus)) auts <- toupper(auts)
-    message("Se han identificado ", length(auts), " autores:\n\n", paste(auts, collapse = "\n"))
+    message("Se han identificado ", length(auts), " autores:\n\n")
+    print(data.frame(Nombre = auts))
 
-    pegar.auts <- utils::askYesNo("Quieres ir copiando los autores al portapapeles?")
+    pegar.auts <- utils::askYesNo("?Quieres ir copiando los autores al portapapeles?")
     if (isTRUE(pegar.auts)) {
       pegar_autores(auts, pausa = pausa)
     }
 
     ## Dar opcion de repetir si ha habido algun fallo
-    repetir.auts <- utils::askYesNo("Necesitas repetir el copiado de autores al portapapeles?")
+    repetir.auts <- utils::askYesNo("?Necesitas repetir el copiado de autores al portapapeles?")
     if (isTRUE(repetir.auts)) {
       pegar_autores(auts, pausa = pausa)
     }

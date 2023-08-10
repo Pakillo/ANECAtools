@@ -19,7 +19,8 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
   }
   auts <- unlist(strsplit(aut.text, split = aut.sep))
 
-  message("Se han identificado ", length(auts), " autores:\n\n", paste(auts, collapse = "\n"))
+  message("Se han identificado ", length(auts), " autores:\n\n")
+  print(data.frame(Nombre = auts))
 
   invisible(auts)
 }
@@ -38,7 +39,7 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 #'
 pegar_autores <- function(autores = NULL, pausa = 3) {
 
-  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos.\nSonara un beep cuando este listo para pegar cada autor\ny un sonido especial cuando haya terminado\n")
+  message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos.\nSube el volumen! Sonara un 'beep' cuando este listo para pegar cada autor\ny un sonido especial cuando haya terminado\n")
 
   readline("Pulsa intro para comenzar a pegar autores en la aplicacion de la ANECA ")
 

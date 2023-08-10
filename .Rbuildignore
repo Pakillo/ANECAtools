@@ -7,3 +7,4 @@
 ^makefile\.R$
 ^LICENSE\.md$
 docs/
+_pkgdown.yml

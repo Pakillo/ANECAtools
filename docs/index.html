@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="index.html">ANECAtools</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Cambiar la navegación">
@@ -67,15 +67,23 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>ANECAtools es un paquete de R con herramientas para facilitar el proceso de solicitud de acreditación de profesorado ante la ANECA, automatizando tareas en lo posible.</p>
+<p>ANECAtools es un paquete de R con herramientas para facilitar el proceso de solicitud de acreditación de profesorado ante la <a href="https://www.aneca.es/" class="external-link">ANECA</a>, automatizando tareas en lo posible. Puede ayudarte a introducir la información mucho más rápido, tanto en la aplicación <a href="https://www.aneca.es/personal-contratado" class="external-link">PEP</a> como <a href="https://www.aneca.es/personal-funcionario" class="external-link">ACADEMIA</a>.</p>
 <p>Entre otras funciones, ANECAtools facilita y agiliza la introducción de los datos de publicaciones a partir de un archivo BibTeX.</p>
 <p>También permite extraer automáticamente la página inicial y final de muchos archivos PDF a la vez, así como agruparlos en un único archivo listo para subir a la plataforma.</p>
 <div class="section level2">
 <h2 id="instalación">Instalación<a class="anchor" aria-label="anchor" href="#instalaci%C3%B3n"></a>
 </h2>
+<p>Para usar ANECAtools tienes que tener R instalado. Puedes descargarlo gratuitamente en <a href="https://cran.r-project.org/" class="external-link uri">https://cran.r-project.org/</a>. Además recomiendo instalar una interfaz como Rstudio: <a href="https://posit.co/download/rstudio-desktop/" class="external-link uri">https://posit.co/download/rstudio-desktop/</a>. <a href="https://datacritica.org/2021/03/18/instalacion-de-r-y-rstudio-en-windows/" class="external-link">Aquí</a> tienes todo el proceso explicado paso a paso.</p>
+<p>Además es necesario tener instalado el paquete <code>remotes</code> para instalar ANECAtools desde GitHub. Una vez abierto R/Rstudio, ejecutar</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("remotes")  # instala el paquete remotes si no lo tienes instalado</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Pakillo/ANECAtools"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>  <span class="co"># instala el paquete remotes si no lo tienes instalado</span></span></code></pre></div>
+<p>También puede ser necesario instalar Rtools. Para comprobarlo, ejecutar:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"pkgbuild"</span><span class="op">)</span>  </span>
+<span><span class="fu">pkgbuild</span><span class="fu">::</span><span class="fu"><a href="https://pkgbuild.r-lib.org/reference/has_build_tools.html" class="external-link">has_build_tools</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Entonces ya podremos instalar ANECAtools:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Pakillo/ANECAtools"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="ejemplos-de-uso">Ejemplos de uso<a class="anchor" aria-label="anchor" href="#ejemplos-de-uso"></a>
@@ -84,24 +92,26 @@
 <div class="section level3">
 <h3 id="introducir-publicaciones">Introducir publicaciones<a class="anchor" aria-label="anchor" href="#introducir-publicaciones"></a>
 </h3>
+<p>Para introducir los datos de las publicaciones (autores, título, revista, páginas, ISSN, etc) simplemente tenemos que pasarle un archivo con las referencias en formato BibTex. Este archivo podemos generarlo a partir de muchas fuentes, por ejemplo exportando nuestras referencias desde Zotero.</p>
 <p><code>introducir_publicaciones("mis_papers.bib")</code></p>
 <p><img src="reference/figures/ANECAtools.gif"></p>
+<p>Si quieres ir más rápido o lento, puedes ajustar la velocidad de pegado (ver <a href="https://pakillo.github.io/ANECAtools/reference/introducir_publicaciones.html">ayuda</a> de la función).</p>
 </div>
 <div class="section level3">
 <h3 id="extraer-páginas-de-archivos-pdf">Extraer páginas de archivos pdf<a class="anchor" aria-label="anchor" href="#extraer-p%C3%A1ginas-de-archivos-pdf"></a>
 </h3>
 <p>Extraer página inicial y final de un archivo PDF:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/pdf_extraer_pags.html">pdf_extraer_pags</a></span><span class="op">(</span><span class="st">"articulo.pdf"</span><span class="op">)</span></span></code></pre></div>
 <p>Extraer página inicial y final de muchos PDF a la vez:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">archivos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"carpeta_pdfs"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">archivos</span>, <span class="va">pdf_extraer_pags</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="combinar-pdfs-en-un-único-archivo">Combinar pdfs en un único archivo<a class="anchor" aria-label="anchor" href="#combinar-pdfs-en-un-%C3%BAnico-archivo"></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pdfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"PDF_SUBSET"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/pdf_combinar.html">pdf_combinar</a></span><span class="op">(</span><span class="va">pdfs</span><span class="op">)</span></span></code></pre></div>
 </div>

@@ -1,3 +1,9 @@
+# ANECAtools 0.0.5
+
+* Añadido nº de posición en el listado de autores.
+
+* Mejora de la documentación.
+
 # ANECAtools 0.0.4
 
 * Se establece pausa voluntaria tras haber introducido 20 autores, por si se desea revisar/corregir la lista o darle a guardar por si la aplicación falla.
