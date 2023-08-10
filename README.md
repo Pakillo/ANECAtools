@@ -4,6 +4,13 @@
 # ANECAtools
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/Pakillo/ANECAtools/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Pakillo/ANECAtools/actions/workflows/R-CMD-check.yaml)
+[![HitCount since
+2023-08-10](https://hits.dwyl.com/Pakillo/ANECAtools.svg?style=flat-square)](https://hits.dwyl.com/Pakillo/ANECAtools)
+[![HitCount: unique users since
+2023-08-10](https://hits.dwyl.com/Pakillo/ANECAtools.svg?style=flat-square&show=unique)](https://hits.dwyl.com/Pakillo/ANECAtools)
+
 <!-- badges: end -->
 
 ANECAtools es un paquete de R con herramientas para facilitar el proceso

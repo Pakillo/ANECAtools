@@ -16,6 +16,10 @@ knitr::opts_chunk$set(
 # ANECAtools
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/Pakillo/ANECAtools/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Pakillo/ANECAtools/actions/workflows/R-CMD-check.yaml)
+[![HitCount since 2023-08-10](https://hits.dwyl.com/Pakillo/ANECAtools.svg?style=flat-square)](https://hits.dwyl.com/Pakillo/ANECAtools)
+[![HitCount: unique users since 2023-08-10](https://hits.dwyl.com/Pakillo/ANECAtools.svg?style=flat-square&show=unique)](https://hits.dwyl.com/Pakillo/ANECAtools)
+
 <!-- badges: end -->
 
 ANECAtools es un paquete de R con herramientas para facilitar el proceso de solicitud de acreditación de profesorado ante la [ANECA](https://www.aneca.es/), automatizando tareas en lo posible. Puede ayudarte a introducir la información mucho más rápido, tanto en la aplicación [PEP](https://www.aneca.es/personal-contratado) como [ACADEMIA](https://www.aneca.es/personal-funcionario).
