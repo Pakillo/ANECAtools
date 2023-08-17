@@ -1,3 +1,8 @@
+# ANECAtools 0.0.6
+
+* `pdf_comprimir()` permite seleccionar el archivo a comprimir interactivamente, así como especificar el nombre del archivo pdf resultante.
+
+
 # ANECAtools 0.0.5
 
 * Añadido nº de posición en el listado de autores.

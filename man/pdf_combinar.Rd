@@ -4,10 +4,10 @@
 \alias{pdf_combinar}
 \title{Combinar varios archivos en un único archivo PDF}
 \usage{
-pdf_combinar(archivos = NULL, pdf.out = "pdfs_agrupados.pdf")
+pdf_combinar(pdf.in = NULL, pdf.out = "pdfs_agrupados.pdf")
 }
 \arguments{
-\item{archivos}{Archivos PDF a combinar}
+\item{pdf.in}{Archivos PDF a combinar}
 
 \item{pdf.out}{Nombre del archivo PDF resultante}
 }

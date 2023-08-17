@@ -56,7 +56,7 @@ pdf_extraer_pags <- function(pdf.in = NULL,
 
 #' Combinar varios archivos en un único archivo PDF
 #'
-#' @param archivos Archivos PDF a combinar
+#' @param pdf.in Archivos PDF a combinar
 #' @param pdf.out Nombre del archivo PDF resultante
 #'
 #' @return Archivo PDF en disco
@@ -67,34 +67,46 @@ pdf_extraer_pags <- function(pdf.in = NULL,
 #' pdfs <- list.files("PDF_SUBSET", full.names = TRUE)
 #' pdf_combinar(pdfs)
 #' }
-pdf_combinar <- function(archivos = NULL, pdf.out = "pdfs_agrupados.pdf") {
+pdf_combinar <- function(pdf.in = NULL, pdf.out = "pdfs_agrupados.pdf") {
 
-  pdftools::pdf_combine(input = archivos, output = pdf.out)
+  pdftools::pdf_combine(input = pdf.in, output = pdf.out)
 
 }
 
 
 #' Comprimir archivo PDF
 #'
-#' @param archivo Ruta de archivo PDF en disco
+#' @param pdf.in Nombre del archivo PDF a comprimir. Si no se especifica, aparecerá
+#' un menú interactivo para elegir el archivo en disco.
+#' @param pdf.out Opcional. Nombre del archivo PDF resultante. Si no se especifica,
+#' se añadirá el sufijo "_comprimido" al nombre original del PDF.
 #' @param calidad "baja", "media" o "alta" según el grado de compresión deseado
 #' @param ... (opcional) Argumentos extra para [tools::compactPDF()]
 #'
 #' @return Fichero PDF comprimido en disco
 #' @export
 #'
-pdf_comprimir <- function(archivo = NULL, calidad = "baja", ...) {
+pdf_comprimir <- function(pdf.in = NULL,
+                          pdf.out = NULL,
+                          calidad = c("baja", "media", "alta"),
+                          ...) {
 
-  stopifnot(is.character(archivo) & length(archivo) == 1)
-  stopifnot(calidad %in% c("baja", "media", "alta"))
-
+  calidad <- match.arg(calidad)
   if (calidad == "baja") qual <- "screen"
   if (calidad == "media") qual <- "ebook"
   if (calidad == "alta") qual <- "printer"
 
-  archivo.comprim <- gsub(".pdf$", "_comprimido.pdf", x = archivo)
-  file.copy(from = archivo, to = archivo.comprim)
+  if (is.null(pdf.in)) {
+    pdf.in <- file.choose()
+  }
+  stopifnot(is.character(pdf.in) & length(pdf.in) == 1)
 
-  tools::compactPDF(archivo.comprim, gs_quality = qual, ...)
+  if (is.null(pdf.out)) {
+    pdf.out <- gsub(".pdf$", "_comprimido.pdf", x = pdf.in)
+  }
+
+  file.copy(from = pdf.in, to = pdf.out)
+
+  tools::compactPDF(pdf.out, gs_quality = qual, ...)
 
 }

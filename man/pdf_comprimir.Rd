@@ -4,10 +4,19 @@
 \alias{pdf_comprimir}
 \title{Comprimir archivo PDF}
 \usage{
-pdf_comprimir(archivo = NULL, calidad = "baja", ...)
+pdf_comprimir(
+  pdf.in = NULL,
+  pdf.out = NULL,
+  calidad = c("baja", "media", "alta"),
+  ...
+)
 }
 \arguments{
-\item{archivo}{Ruta de archivo PDF en disco}
+\item{pdf.in}{Nombre del archivo PDF a comprimir. Si no se especifica, aparecerá
+un menú interactivo para elegir el archivo en disco.}
+
+\item{pdf.out}{Opcional. Nombre del archivo PDF resultante. Si no se especifica,
+se añadirá el sufijo "_comprimido" al nombre original del PDF.}
 
 \item{calidad}{"baja", "media" o "alta" según el grado de compresión deseado}
 
