@@ -80,6 +80,17 @@ Si quieres ir más rápido o lento, puedes ajustar la velocidad de pegado
 [ayuda](https://pakillo.github.io/ANECAtools/reference/introducir_publicaciones.html)
 de la función).
 
+### Introducir proyectos, congresos, etc
+
+Para introducir la información en cualquiera de las otras secciones,
+puede utilizarse la función
+[introducir_campos](https://pakillo.github.io/ANECAtools/reference/introducir_campos.html).
+Esta función leerá todos los campos de cualquier data frame y los irá
+copiando secuencialmente al portapapeles (y a la consola de R) para
+poder pegarlos en la aplicación de la ANECA.
+
+![](man/figures/introducir_campos.gif)
+
 ### Extraer páginas de archivos pdf
 
 Extraer página inicial y final de un archivo PDF:
@@ -100,4 +111,10 @@ lapply(archivos, pdf_extraer_pags)
 ``` r
 pdfs <- list.files("PDF_SUBSET", full.names = TRUE)
 pdf_combinar(pdfs)
+```
+
+## Comprimir pdf
+
+``` r
+pdf_comprimir("justificantes.pdf")
 ```

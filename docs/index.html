@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="index.html">ANECAtools</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Cambiar la navegación">
@@ -100,6 +100,12 @@
 <p>Si quieres ir más rápido o lento, puedes ajustar la velocidad de pegado (ver <a href="https://pakillo.github.io/ANECAtools/reference/introducir_publicaciones.html">ayuda</a> de la función).</p>
 </div>
 <div class="section level3">
+<h3 id="introducir-proyectos-congresos-etc">Introducir proyectos, congresos, etc<a class="anchor" aria-label="anchor" href="#introducir-proyectos-congresos-etc"></a>
+</h3>
+<p>Para introducir la información en cualquiera de las otras secciones, puede utilizarse la función <a href="https://pakillo.github.io/ANECAtools/reference/introducir_campos.html">introducir_campos</a>. Esta función leerá todos los campos de cualquier data frame y los irá copiando secuencialmente al portapapeles (y a la consola de R) para poder pegarlos en la aplicación de la ANECA.</p>
+<p><img src="reference/figures/introducir_campos.gif"></p>
+</div>
+<div class="section level3">
 <h3 id="extraer-páginas-de-archivos-pdf">Extraer páginas de archivos pdf<a class="anchor" aria-label="anchor" href="#extraer-p%C3%A1ginas-de-archivos-pdf"></a>
 </h3>
 <p>Extraer página inicial y final de un archivo PDF:</p>
@@ -117,6 +123,12 @@
 <code class="sourceCode R"><span><span class="va">pdfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"PDF_SUBSET"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/pdf_combinar.html">pdf_combinar</a></span><span class="op">(</span><span class="va">pdfs</span><span class="op">)</span></span></code></pre></div>
 </div>
+</div>
+<div class="section level2">
+<h2 id="comprimir-pdf">Comprimir pdf<a class="anchor" aria-label="anchor" href="#comprimir-pdf"></a>
+</h2>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/pdf_comprimir.html">pdf_comprimir</a></span><span class="op">(</span><span class="st">"justificantes.pdf"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="enlaces">

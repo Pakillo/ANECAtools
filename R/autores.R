@@ -62,10 +62,4 @@ pegar_autores <- function(autores = NULL, pausa = 3) {
 }
 
 
-pegar_texto <- function(texto = NULL, mayus = TRUE) {
-
-  if (isTRUE(mayus)) texto <- toupper(texto)
-  clipr::write_clip(texto, object_type = "character")
-
-}
 

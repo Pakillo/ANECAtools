@@ -1,3 +1,7 @@
+# ANECAtools 0.0.7
+
+* Nueva función `introducir_campos()` para introducir información en cualquiera de las secciones de la aplicación ANECA (congresos, proyectos, etc) a partir de un data frame. 
+
 # ANECAtools 0.0.6
 
 * `pdf_comprimir()` permite seleccionar el archivo a comprimir interactivamente, así como especificar el nombre del archivo pdf resultante.
