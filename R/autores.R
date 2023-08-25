@@ -28,15 +28,23 @@ extraer_autores <- function(aut.text = NULL, aut.sep = "; ", mayus = TRUE) {
 
 #' Pegar autores
 #'
+#' Dado un vector de caracteres, esta función copiará cada item al portapapeles
+#' secuencialmente. Pude utilizarse para rellenar cualquier campo con múltiples items,
+#' aparte de los autores.
+#'
 #' @param autores Vector con los nombres de los autores
 #' @param pausa Tiempo (en segundos) que dura el nombre de cada autor en el portapapeles
 #' (para que dé tiempo a pegar cada uno en la aplicación de la ANECA)
 #'
 #' @return Los autores son copiados al portapapeles secuencialmente
 #'
-#' @keywords internal
-#' @noRd
+#' @export
 #'
+#' @examples
+#' \dontrun{
+#' autores <- extraer_autores("Quintero, Elena; Rodriguez-Sanchez, Francisco; Jordano, Pedro")
+#' pegar_autores(autores)
+#' }
 pegar_autores <- function(autores = NULL, pausa = 3) {
 
   message("\nCopiando cada autor al portapapeles cada ", pausa, " segundos.\nSube el volumen! Sonara un 'beep' cuando este listo para pegar cada autor\ny un sonido especial cuando haya terminado\n")

@@ -1,3 +1,7 @@
+# ANECAtools 0.0.8
+
+* Nueva función exportada `pegar_autores()` para pegar autores (o cualquier vector) secuencialmente al portapapeles. 
+
 # ANECAtools 0.0.7
 
 * Nueva función `introducir_campos()` para introducir información en cualquiera de las secciones de la aplicación ANECA (congresos, proyectos, etc) a partir de un data frame. 

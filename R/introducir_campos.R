@@ -5,6 +5,8 @@
 #' en cualquier sección de la aplicación ANECA (proyectos, congresos, etc).
 #' La función simplemente lee el data frame y va pegando cada campo al portapapeles.
 #' Para introducir publicaciones, debe utilizarse [introducir_publicaciones()].
+#' Para rellenar campos con múltiples items (p. ej. autores), puede utilizarse la
+#' función [pegar_autores()].
 #'
 #' @param df Data frame con distintos campos a introducir en la aplicación de la ANECA.
 #' Este data frame puede leerse en R p. ej.

@@ -27,3 +27,6 @@ bibfile <- system.file("extdata", "articulo.bib", package = "ANECAtools")
 introducir_publicaciones(bibfile)
 }
 }
+\seealso{
+\code{\link[=extraer_autores]{extraer_autores()}} \code{\link[=pegar_autores]{pegar_autores()}}
+}

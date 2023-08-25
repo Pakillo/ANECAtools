@@ -27,4 +27,6 @@ Esta función sirve para introducir información de los distintos campos requeri
 en cualquier sección de la aplicación ANECA (proyectos, congresos, etc).
 La función simplemente lee el data frame y va pegando cada campo al portapapeles.
 Para introducir publicaciones, debe utilizarse \code{\link[=introducir_publicaciones]{introducir_publicaciones()}}.
+Para rellenar campos con múltiples items (p. ej. autores), puede utilizarse la
+función \code{\link[=pegar_autores]{pegar_autores()}}.
 }

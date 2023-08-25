@@ -10,6 +10,8 @@
 #' al portapapeles para poder pegarlos en la aplicación de la ANECA.
 #' @export
 #'
+#' @seealso [extraer_autores()] [pegar_autores()]
+#'
 #' @examples
 #' \dontrun{
 #' bibfile <- system.file("extdata", "articulo.bib", package = "ANECAtools")
