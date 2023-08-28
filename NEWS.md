@@ -1,3 +1,7 @@
+# ANECAtools 0.0.10
+
+* Nueva función `texto_mayus()` para modificar las mayúsculas de un texto. 
+
 # ANECAtools 0.0.9
 
 * Nueva función `texto_unir_lineas()` para unir varias líneas de texto (p. ej. copiadas de archivos en pdf) en una sola línea. 
