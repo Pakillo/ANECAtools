@@ -1,3 +1,7 @@
+# ANECAtools 0.0.9
+
+* Nueva función `texto_unir_lineas()` para unir varias líneas de texto (p. ej. copiadas de archivos en pdf) en una sola línea. 
+
 # ANECAtools 0.0.8
 
 * Nueva función exportada `pegar_autores()` para pegar autores (o cualquier vector) secuencialmente al portapapeles. 
