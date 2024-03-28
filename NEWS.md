@@ -1,3 +1,7 @@
+# ANECAtools 0.0.11
+
+* Nueva función `fecha_formatear()` para obtener las fechas en el formato requerido por la ANECA (dd/mm/yyyy). 
+
 # ANECAtools 0.0.10
 
 * Nueva función `texto_mayus()` para modificar las mayúsculas de un texto. 
