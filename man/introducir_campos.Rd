@@ -4,7 +4,7 @@
 \alias{introducir_campos}
 \title{Introducir campos de cualquier data frame}
 \usage{
-introducir_campos(df = NULL, pausa = 4)
+introducir_campos(df = NULL, col_info = 1, pausa = 4)
 }
 \arguments{
 \item{df}{Data frame con distintos campos a introducir en la aplicación de la ANECA.
@@ -14,6 +14,10 @@ o un fichero Excel (usando \code{\link[readxl:read_excel]{readxl::read_excel()}}
 Aunque no es estrictamente necesario, idealmente el data frame debe contener
 los mismos campos (y en el mismo orden) requeridos por la aplicación de la ANECA.
 El nombre de las columnas puede ser diferente al de la aplicación.}
+
+\item{col_info}{Nombre o número de la columna que contiene la información principal
+sobre el item (p. ej. título de la charla). Se utilizará únicamente para preguntar
+si se quiere procesar dicho item o saltarlo.}
 
 \item{pausa}{Tiempo (en segundos) que dura cada campo en el portapapeles
 (para que dé tiempo a pegar cada uno en la aplicación de la ANECA)}

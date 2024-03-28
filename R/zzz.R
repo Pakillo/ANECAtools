@@ -8,9 +8,9 @@ pegar_texto <- function(texto = NULL, mayus = TRUE) {
 
 
 
-procesar_fila <- function(fila = NULL, pausa = 4) {
+procesar_fila <- function(fila = NULL, pausa = 4, main_col = 1) {
 
-  procesar <- utils::askYesNo(paste0("Quieres procesar '", fila[, 1], "'?"))
+  procesar <- utils::askYesNo(paste0("Quieres procesar '", fila[, main_col], "'?"))
 
   if (isTRUE(procesar)) {
 
@@ -30,3 +30,4 @@ procesar_fila <- function(fila = NULL, pausa = 4) {
     return("Done!")
   } else return("OK!")
 }
+

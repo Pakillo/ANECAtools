@@ -15,6 +15,9 @@
 #' Aunque no es estrictamente necesario, idealmente el data frame debe contener
 #' los mismos campos (y en el mismo orden) requeridos por la aplicación de la ANECA.
 #' El nombre de las columnas puede ser diferente al de la aplicación.
+#' @param col_info Nombre o número de la columna que contiene la información principal
+#' sobre el item (p. ej. título de la charla). Se utilizará únicamente para preguntar
+#' si se quiere procesar dicho item o saltarlo.
 #' @param pausa Tiempo (en segundos) que dura cada campo en el portapapeles
 #' (para que dé tiempo a pegar cada uno en la aplicación de la ANECA)
 #'
@@ -22,12 +25,12 @@
 #' poder pegarlos en la aplicación de la ANECA.
 #' @export
 #'
-introducir_campos <- function(df = NULL, pausa = 4) {
+introducir_campos <- function(df = NULL, col_info = 1, pausa = 4) {
 
   stopifnot(inherits(df, "data.frame"))
 
   filas <- split(df, 1:nrow(df))
-  lapply(filas, procesar_fila, pausa = pausa)
+  lapply(filas, procesar_fila, pausa = pausa, main_col = col_info)
 
 }
 
