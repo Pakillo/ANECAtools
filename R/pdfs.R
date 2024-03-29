@@ -1,7 +1,7 @@
 
 #' Extraer páginas concretas de archivos PDF
 #'
-#' @param pdf.in Nombre del archivo pdf cuyas páginas se desean extraer
+#' @param pdf.in Nombre del archivo (o archivos) pdf cuyas páginas se desean extraer
 #' @param pags Vector numérico especificando las páginas a extraer.
 #' Alternativamente, puede indicarse "ini" y/o "fin" para extraer las páginas
 #' inicial y final, respectivamente (ver ejemplos).
@@ -10,7 +10,8 @@
 #' se utilizará el nombre del archivo original añadiéndole el número de las
 #' páginas extraídas.
 #'
-#' @return Fichero pdf en disco
+#' @return Fichero pdf en disco. Además, la función devuelve las rutas a los archivos extraidos,
+#' por lo que es fácil ejecutar a continuación `pdf_combinar()`.
 #' @export
 #'
 #' @examples
@@ -22,9 +23,9 @@
 #'
 #' ## Extraer página inicial y final de muchos pdf a la vez
 #' archivos <- list.files("carpetapdfs", full.names = TRUE)
-#' lapply(archivos, pdf_extraer_pags)
+#' pdf_extraer_pags(archivos)
 #' }
-pdf_extraer_pags <- function(pdf.in = NULL,
+pdf_extraer_pags <- Vectorize(function(pdf.in = NULL,
                              pags = c("ini", "fin"),
                              out.dir = "PDF_SUBSET",
                              pdf.out = NULL) {
@@ -50,7 +51,7 @@ pdf_extraer_pags <- function(pdf.in = NULL,
   pdftools::pdf_subset(input = pdf.in, pages = pags, output = outfile)
 
 
-}
+}, vectorize.args = "pdf.in")
 
 
 

@@ -1,3 +1,7 @@
+# ANECAtools 0.0.12
+
+* La función `pdf_extraer_pags()` está ahora vectorizada, en otras palabras, se puede extraer páginas de muchos pdf a la vez sin necesidad de usar `lapply` o similar. 
+
 # ANECAtools 0.0.11
 
 * Nueva función `fecha_formatear()` para obtener las fechas en el formato requerido por la ANECA (dd/mm/yyyy). 

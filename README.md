@@ -103,7 +103,7 @@ Extraer página inicial y final de muchos PDF a la vez:
 
 ``` r
 archivos <- list.files("carpeta_pdfs", full.names = TRUE)
-lapply(archivos, pdf_extraer_pags)
+pdf_extraer_pags(archivos)
 ```
 
 ### Combinar pdfs en un único archivo

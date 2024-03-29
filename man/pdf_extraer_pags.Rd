@@ -12,7 +12,7 @@ pdf_extraer_pags(
 )
 }
 \arguments{
-\item{pdf.in}{Nombre del archivo pdf cuyas páginas se desean extraer}
+\item{pdf.in}{Nombre del archivo (o archivos) pdf cuyas páginas se desean extraer}
 
 \item{pags}{Vector numérico especificando las páginas a extraer.
 Alternativamente, puede indicarse "ini" y/o "fin" para extraer las páginas
@@ -25,7 +25,8 @@ se utilizará el nombre del archivo original añadiéndole el número de las
 páginas extraídas.}
 }
 \value{
-Fichero pdf en disco
+Fichero pdf en disco. Además, la función devuelve las rutas a los archivos extraidos,
+por lo que es fácil ejecutar a continuación \code{pdf_combinar()}.
 }
 \description{
 Extraer páginas concretas de archivos PDF
@@ -39,6 +40,6 @@ pdf_extraer_pags("articulo.pdf", pags = c(1, 2, 8))  # extrae páginas 1, 2 y 8
 
 ## Extraer página inicial y final de muchos pdf a la vez
 archivos <- list.files("carpetapdfs", full.names = TRUE)
-lapply(archivos, pdf_extraer_pags)
+pdf_extraer_pags(archivos)
 }
 }
