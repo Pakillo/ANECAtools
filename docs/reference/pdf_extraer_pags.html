@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ANECAtools</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.11</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.12</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Cambiar la navegación">
@@ -62,7 +62,7 @@
     <div class="section level2">
     <h2 id="argumentos">Argumentos<a class="anchor" aria-label="anchor" href="#argumentos"></a></h2>
     <dl><dt>pdf.in</dt>
-<dd><p>Nombre del archivo pdf cuyas páginas se desean extraer</p></dd>
+<dd><p>Nombre del archivo (o archivos) pdf cuyas páginas se desean extraer</p></dd>
 
 
 <dt>pags</dt>
@@ -85,7 +85,8 @@ páginas extraídas.</p></dd>
     <h2 id="valor">Valor<a class="anchor" aria-label="anchor" href="#valor"></a></h2>
     
 
-<p>Fichero pdf en disco</p>
+<p>Fichero pdf en disco. Además, la función devuelve las rutas a los archivos extraidos,
+por lo que es fácil ejecutar a continuación <code><a href="pdf_combinar.html">pdf_combinar()</a></code>.</p>
     </div>
 
     <div class="section level2">
@@ -98,7 +99,7 @@ páginas extraídas.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Extraer página inicial y final de muchos pdf a la vez</span></span></span>
 <span class="r-in"><span><span class="va">archivos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"carpetapdfs"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">archivos</span>, <span class="va">pdf_extraer_pags</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">pdf_extraer_pags</span><span class="op">(</span><span class="va">archivos</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
