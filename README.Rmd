@@ -32,24 +32,12 @@ También permite extraer automáticamente la página inicial y final de muchos a
 
 Para usar ANECAtools tienes que tener R instalado. Puedes descargarlo gratuitamente en https://cran.r-project.org/. Además recomiendo instalar una interfaz como Rstudio: https://posit.co/download/rstudio-desktop/. [Aquí](https://datacritica.org/2021/03/18/instalacion-de-r-y-rstudio-en-windows/) tienes todo el proceso explicado paso a paso.
 
-Además es necesario tener instalado el paquete `remotes` para instalar ANECAtools desde GitHub. Una vez abierto R/Rstudio, ejecutar
+Para utilizar ANECAtools es necesario instalarlo (sólo la primera vez). Para ello, una vez abierto R/Rstudio, ejecutar
 
 ``` r
-install.packages("remotes")  # instala el paquete remotes si no lo tienes instalado
+install.packages('ANECAtools', repos = c('https://pakillo.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
-También puede ser necesario instalar Rtools. Para comprobarlo, ejecutar:
-
-``` r
-install.packages("pkgbuild")  
-pkgbuild::has_build_tools()
-```
-
-Entonces ya podremos instalar ANECAtools (este proceso solo hay que realizarlo la primera vez):
-
-``` r
-remotes::install_github("Pakillo/ANECAtools")
-```
 
 ## Ejemplos de uso
 
